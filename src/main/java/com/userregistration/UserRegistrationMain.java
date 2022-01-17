@@ -15,6 +15,7 @@ public class UserRegistrationMain {
         System.out.println("Enter 2 : to validate Last Name");
         System.out.println("Enter 3 : to validate Email");
         System.out.println("Enter 4 : to validate Mobile Number");
+        System.out.println("Enter 5 : to validate Password");
         switch (scanner.nextInt()){
             case 1:
                 UserRegistration.validFirstName();
@@ -27,6 +28,9 @@ public class UserRegistrationMain {
                 break;
             case 4:
                 UserRegistration.validMobileNumber();
+                break;
+            case 5:
+                UserRegistration.validPassword();
                 break;
         }
     }
