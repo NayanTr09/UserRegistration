@@ -64,7 +64,7 @@ public class UserRegistration {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the password");
         String password = scanner.next();
-        String regex4 = "^(?=.*[a-z])(?=.*[A-Z]){8,}$";
+        String regex4 = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]){8,}$";
         Pattern p4 = Pattern.compile(regex4);
         Matcher m4 = p4.matcher(password);
         boolean r4 = m4.matches();
