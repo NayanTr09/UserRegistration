@@ -1,6 +1,10 @@
 package com.userregistration;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserRegistrationMain {
     public static void welcome() {
@@ -8,6 +12,26 @@ public class UserRegistrationMain {
     }
 
     public static void main(String[] args) {
+        List emails = new ArrayList();
+        //Valid Emails
+        emails.add("abc@yahoo.com");
+        emails.add("abc-100@yahoo.com");
+        emails.add("abc.100@yahoo.com");
+        emails.add("abc111@abc.com");
+        emails.add("abc-100@abc.net");
+        emails.add("abc.100@abc.com.au");
+        emails.add("abc@1.com");
+        emails.add("abc@gmail.com.com");
+        emails.add("abc+100@gmail.com");
+
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+
+        Pattern pattern = Pattern.compile(regex);
+
+        for(Object emaillist : emails){
+            Matcher matcher = pattern.matcher((String) emaillist);
+            System.out.println(emaillist +" : "+ matcher.matches());
+        }
         welcome();
         UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
