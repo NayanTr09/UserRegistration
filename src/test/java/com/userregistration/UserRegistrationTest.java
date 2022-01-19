@@ -40,7 +40,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenFirstname_WhenNull_ShouldReturnFirstNameisValid() throws UserRegistrationException {
+    public void givenFirstname_WhenNull_ShouldReturnEnteredInvalidName() throws UserRegistrationException {
         UserRegistration input = new UserRegistration(null);
         try {
             String actualresult = input.validFirstName();
