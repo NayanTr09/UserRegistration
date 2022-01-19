@@ -5,18 +5,35 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
+    String name;
 
-    public static String validFirstName(String name) {
-        String regex = "^[A-Z]{1}[a-z]{2,}$";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(name);
-        boolean r = m.matches();
-        if (r) {
-            return "First Name is Valid";
-        }
-        else
-            return "First Name is not Valid";
+    public UserRegistration(String name) {
+        this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static String validFirstName() throws UserRegistrationException {
+        try {
+            String regex = "^[A-Z]{1}[a-z]{2,}$";
+            Pattern p = Pattern.compile(regex);
+            Matcher m = p.matcher(null);
+            boolean r = m.matches();
+            if (r) {
+                return "First Name is Valid";
+            } else
+                return "First Name is not Valid";
+        } catch (NullPointerException e) {
+            throw new UserRegistrationException("Entered Invalid Name");
+        }
+    }
+
 
     public static String validLastName(String name) {
         String regex = "^[A-Z]{1}[a-z]{2,}$";

@@ -33,7 +33,7 @@ public class UserRegistrationMain {
             System.out.println(emaillist +" : "+ matcher.matches());
         }
         welcome();
-        UserRegistration user = new UserRegistration();
+       // UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1 : to validate First Name ");
         System.out.println("Enter 2 : to validate Last Name");
